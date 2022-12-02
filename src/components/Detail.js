@@ -1,190 +1,61 @@
-import React, {useEffect, useState} from 'react';
-import styled from 'styled-components';
-import {useParams} from 'react-router-dom';
-import db from '../firebase';
-import { collection, getDocs } from "firebase/firestore"; 
+import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+import { useParams } from "react-router-dom";
+import { BsFillPlayFill, BsPlusLg } from "react-icons/bs";
+import Group from "../assets/images/group-icon.png";
+import { useSelector } from "react-redux";
 
-const Detail=()=> {
-    const {id} = useParams();
+const Detail = () => {
+    let data = useSelector((state) => state.movies.value);
+    const { id } = useParams();
     const [movie, setMovie] = useState({});
 
-
-    const fetchMovie = async (ID)=>{
-        try{
-                const querySnapshot = await getDocs(collection(db, "movies"));
-                querySnapshot.forEach(doc => {
-                    if(doc.id === ID){
-                        return setMovie((doc.data()));
-                    }
-                });
-        }catch(error){
-            alert(error.message)
-        }
-    };
-
     useEffect(() => {
-        fetchMovie(id);
-
-        return () => {
-            setMovie({});
-          };
-
-    }, [id])
-
-    console.log(movie)
+        setMovie(data.filter((item) => item.id === id));
+        console.log(movie);
+    }, [id]);
 
     return (
-        <Container>
-            {movie && (
-                <>
-                    <Background>
-                        <img src={movie.backgroundImg} alt='Background' />
-                    </Background>
+        <>
+            <Navbar />
+            <div className="detail bg-[linear-] relative mt-[85px] min-h-[calc(100vh-85px)] w-full bg-gradient-to-r from-[rgba(0,0,0,0.4)]">
+                <img
+                    src={movie[0]?.backgroundImg}
+                    className="absolute top-0 left-0 right-0 bottom-0 -z-10 h-[calc(100vh-85px)] w-full object-cover"
+                    alt=""
+                />
+                <div className="ml-4 mr-6 flex max-w-[600px] flex-col justify-start pt-8 md:mr-0 md:ml-12 md:pt-14">
+                    <img
+                        src={movie[0]?.titleImg}
+                        alt=""
+                        className="mb-12 min-w-[100px] max-w-[500px]"
+                    />
+                    <div className="cta mb-7 flex items-center gap-2 md:gap-3">
+                        <button className="flex items-center justify-center  gap-1 rounded border border-white bg-white py-2 pl-2 pr-4 md:py-3 md:pl-3 md:pr-5">
+                            <BsFillPlayFill className="text-3xl text-black" />
+                            <p className="uppercase tracking-[3px] text-black">
+                                play
+                            </p>
+                        </button>
+                        <button className="flex items-center justify-center gap-1 rounded border border-white bg-[rgba(0,0,0,0.3)] py-2 pl-2 pr-4 md:py-3 md:pl-3 md:pr-5">
+                            <BsFillPlayFill className=" text-3xl text-white" />
+                            <p className="uppercase tracking-[3px] text-white">
+                                Trailer
+                            </p>
+                        </button>
+                        <button className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-white bg-[rgba(0,0,0,0.5)] md:h-14 md:w-14">
+                            <BsPlusLg className="text-xl" />
+                        </button>
+                        <button className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-white bg-black md:h-14 md:w-14">
+                            <img src={Group} className="" alt="" />
+                        </button>
+                    </div>
+                    <p className="mb-4 text-lg">{movie[0]?.subTitle}</p>
+                    <p className="text-lg">{movie[0]?.description}</p>
+                </div>
+            </div>
+        </>
+    );
+};
 
-                    <ImageTitle>
-                        <img src={movie.titleImg} alt='Title' />
-                    </ImageTitle>
-
-                    <Controls>
-                        <PlayButton>
-                            <img src='/images/play-icon-black.png' alt='' />
-                            <span>PLAY</span>
-                        </PlayButton>
-                        <TrailerButton>
-                            <img src='/images/play-icon-white.png' alt='' />
-                            <span>TRAILER</span>
-                        </TrailerButton>
-                        <AddButton>
-                            <span>+</span>
-                        </AddButton>
-                        <GroupWatchButton>
-                            <img src='/images/group-icon.png' alt='' />
-                        </GroupWatchButton>
-                    </Controls>
-
-                    <SubTitle>
-                        {movie.subTitle}
-                    </SubTitle>
-                    
-                    <Description>
-                        {movie.description}
-                    </Description>
-                </>
-            )}
-        </Container>
-    )
-}
-
-export default Detail
-
-const Container = styled.div`
-    min-height: calc(100vh - 70px);
-    padding: 0 calc(3.5vw + 5px);
-    position: relative;
-`
-
-const Background = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    opacity: 0.7;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-`
-
-const ImageTitle = styled.div`
-    height: 30vh;
-    min-height: 170px;
-    width: 35vw;
-    min-width: 200px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    left: 0;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-`
-
-const Controls = styled.div`
-    display: flex;
-    align-items: center;
-`
-
-const PlayButton = styled.button`
-    height: 56px;
-    border: 3px solid rgba(249, 249, 249);
-    padding: 0px 24px;
-    margin-right: 22px;
-    border-radius: 5px;
-    font-size: 15px;
-    letter-spacing: 1.8px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-    &:hover {
-        background: rgb(198, 198, 198, 0.7);
-    }
-`
-
-const TrailerButton = styled(PlayButton)`
-
-    color: white;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(249, 249, 249);
-
-    &:hover {
-        background: rgb(198, 198, 198, 0.5);
-    }
-`
-
-const AddButton = styled.button`
-    height: 44px;
-    width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(249, 249, 249);
-    cursor: pointer;
-
-    span {
-        font-size: 30px;
-        color: white;
-    }
-
-    &:hover {
-        background: rgb(198, 198, 198, 0.2);
-    }
-`
-
-const GroupWatchButton = styled(AddButton)`
-    background: rgba(0, 0, 0, 0.9);
-`
-
-const SubTitle = styled.div`
-    font-size: 15px;
-    color: rgba(249, 249, 249);
-    min-height: 20px;
-    margin-top: 26px;
-`
-
-const Description = styled.div`
-    
-    font-size: 20px;
-    margin-top: 16px;
-    max-width: 700px;
-    color: rgba(249, 249, 249);
-`
+export default Detail;
