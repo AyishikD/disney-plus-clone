@@ -19,7 +19,7 @@
 - Tailwind CSS: Utility-first CSS framework for rapid UI development
 ## Demo
 
-You can check out the live demo of the Disney Plus Clone [here](https://your-demo-url.com).
+You can check out the live demo of the Disney Plus Clone https://main--disneys-clone.netlify.app/.
 
 ## Getting Started
 
