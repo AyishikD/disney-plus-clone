@@ -7,6 +7,7 @@ import OriginalsIcon from "../assets/images/OriginalsIcon";
 import MoviesIcon from "../assets/images/MoviesIcon";
 import SeriesIcon from "../assets/images/SeriesIcon";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
     // navitem-hover:bg-gradient-to-r navitem-hover:from-white navitem-hover:to-white
@@ -18,6 +19,8 @@ const Navbar = () => {
             </div>
         );
     };
+
+    const { loginWithRedirect,logout, isAuthenticated } = useAuth0();
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-10 w-full overflow-hidden bg-body-bg ">
@@ -62,9 +65,20 @@ const Navbar = () => {
                         </NavItem>
                     </div>
                 </div>
-                <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black">
+                {
+                    !isAuthenticated ? 
+
+                    <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black"
+                    onClick={() => loginWithRedirect()}
+                >
                     Login
+                </button>:
+                <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black"
+                onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                >
+                    Logout
                 </button>
+        }
             </div>
         </nav>
     );
