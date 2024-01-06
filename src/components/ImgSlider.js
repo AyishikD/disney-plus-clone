@@ -13,9 +13,9 @@ const ImgSlider = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
-        slideToScroll: 1,
-        autoPlay: true,
+        slideToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
     };
     const Carousel = styled(Slider)`
         margin-top: 20px;
@@ -101,3 +101,4 @@ const ImgSlider = () => {
 };
 
 export default ImgSlider;
+
