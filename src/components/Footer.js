@@ -1,39 +1,39 @@
 // Footer.js
 
 import React from 'react';
-//import './Footer.css';  // Import the CSS file
+import './Footer.css';
 
 const Footer = () => {
     return (
         <footer>
             <div style={styles.footerPanel2} className="footer-panel2">
                 <div className="navFooterlinkCol">
-                    <div style={styles.boldFooterLinkCol} className="footerlinkcol">Company</div>
+                    <div style={styles.boldFooterLinkCol} className="footerlinkcol myedit-footlink-headings">Company</div>
                     <ul>
-                        <li><a href="##">About</a></li>
-                        <li><a href="##">Careers</a></li>
+                        <li className="myedit-footerlinks"><a href="##">About</a></li>
+                        <li className="myedit-footerlinks"><a href="##">Careers</a></li>
                     </ul>
                 </div>
 
                 
                 <div className="navFooterlinkCol">
-                    <div style={styles.boldFooterLinkCol} className="footerlinkcol">View Website in</div>
+                    <div style={styles.boldFooterLinkCol} className="footerlinkcol myedit-footlink-headings">View Website in</div>
                     <ul>
-                        <li><a href="##">English</a></li>
+                        <li className="myedit-footerlinks"><a href="##">English</a></li>
                     </ul>
                 </div>
                 <div className="navFooterlinkCol">
-                    <div style={styles.boldFooterLinkCol} className="footerlinkcol">Need Help</div>
+                    <div style={styles.boldFooterLinkCol} className="footerlinkcol myedit-footlink-headings">Need Help</div>
                     <ul>
-                        <li><a href="##">Visit Help Center</a></li>
-                        <li><a href="##">Share Feedback</a></li>
+                        <li className="myedit-footerlinks"><a href="##">Visit Help Center</a></li>
+                        <li className="myedit-footerlinks"><a href="##">Share Feedback</a></li>
                     </ul>
                 </div>
                 <div className="navFooterlinkCol">
-                    <div style={styles.boldFooterLinkCol} className="footerlinkcol">Contact Us</div>
+                    <div style={styles.boldFooterLinkCol} className="footerlinkcol myedit-footlink-headings">Contact Us</div>
                     <ul>
-                        <li><a href="##">Facebook</a></li>
-                        <li><a href="##">Twiter</a></li>
+                        <li className="myedit-footerlinks"><a href="##">Facebook</a></li>
+                        <li className="myedit-footerlinks"><a href="##">Twiter</a></li>
                     </ul>
                 </div>
                 
