@@ -7,6 +7,7 @@ import Recommended from "../../components/Recommended";
 import Trending from "../../components/Trending";
 import Viewers from "../../components/Viewers";
 
+
 const Home = () => {
     return (
         <div>

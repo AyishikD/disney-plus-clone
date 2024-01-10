@@ -13,8 +13,7 @@ const Navbar = () => {
     const NavItem = (props) => {
         return (
             <div className="relative flex cursor-pointer items-center space-x-3 navitem-hover:w-full">
-                {props.children}
-                <span className="absolute right-0 bottom-[-5px] left-[-7px] h-[3px] w-0 rounded-sm bg-white transition-all duration-150 ease-linear"></span>
+                <span className="absolute right-0 bottom-[-5px] left-[-7px] h-[3px] w-0 rounded-sm bg-white transition-all duration-150 ease-linear">{props.children}</span>
             </div>
         );
     };
@@ -30,36 +29,45 @@ const Navbar = () => {
                             alt="Logo-Disney"
                         />
                     </Link>
-                    <div className="hidden gap-10 xl:flex  ">
-                        <NavItem>
+                    <div className="gap-14 flex flex-row xl:flex hover:cursor-pointer">
+                            <div className="flex flex-col">
                             <HomeIcon width={"36"} />
                             <p>Home</p>
-                        </NavItem>
+                            </div>           
 
-                        <NavItem>
+                            
+                            <div className="flex flex-col">
                             <SearchIcon width={"36"} />
                             <p>Search</p>
-                        </NavItem>
+                            </div>
+                           
+                                              
 
-                        <NavItem>
+                            <div className="flex flex-col">
                             <WatchlistIcon width={"36"} />
                             <p>Watchlist</p>
-                        </NavItem>
+                            </div>
+                            
 
-                        <NavItem>
+                            <div className="flex flex-col">
                             <OriginalsIcon width={"36"} />
                             <p>Originals</p>
-                        </NavItem>
+                            </div>
+                           
 
-                        <NavItem>
+                            <div className="flex flex-col">
                             <MoviesIcon width={"36"} />
                             <p>Movies</p>
-                        </NavItem>
+                            </div>
+                           
+                        
 
-                        <NavItem>
+                            <div className="flex flex-col">
                             <SeriesIcon width={"36"} />
                             <p>Series</p>
-                        </NavItem>
+                            </div>
+                            
+                        
                     </div>
                 </div>
                 <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black">
