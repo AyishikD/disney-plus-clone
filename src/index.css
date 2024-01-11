@@ -5,18 +5,21 @@
     font-weight: 300;
     font-style: normal;
 }
+
 @font-face {
     font-family: Avenir;
     src: url("./assets/fonts/Avenir-Roman.woff2");
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: Avenir;
     src: url("./assets/fonts/Avenir-Medium.woff2");
     font-weight: 500;
     font-style: normal;
 }
+
 @font-face {
     font-family: Avenir;
     src: url("./assets/fonts/Avenir-Heavy.woff2");
@@ -33,6 +36,7 @@ html,
 body {
     overflow-x: hidden;
 }
+
 body {
     background-color: #040417;
     color: #f9f9f9;
@@ -48,13 +52,132 @@ body {
         font-size: 16px;
     }
 }
+
 @media only screen and (max-width: 768px) {
     body {
         font-size: 15px;
     }
+
+    .slick-slider {
+        height: 25vh;
+    }
+
+    .slick-list,
+    .slick-track,
+    .slick-slide,
+    .slick-slide div {
+        height: 100%;
+    }
+
+    .slick-slide a {
+        height: 100%;
+    }
+
+    .slick-slide a>img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    nav.fixed>.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    nav.fixed>.container>.flex {
+        width: inherit;
+        gap: unset;
+    }
+
+    nav.fixed>.container>.flex>a>img {
+        width: 3rem;
+    }
+
+    nav.fixed>.container>.flex>div {
+        width: inherit;
+        gap: 0;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    nav.fixed>.container>button {
+        font-size: 10px;
+        width: 15%;
+        /* height: 11%; */
+        padding: 3px;
+    }
+
+    .flex-col {
+        font-size: 10px;
+        flex-direction: column;
+        width: 10%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
 }
+
 @media only screen and (max-width: 479px) {
     body {
         font-size: 14px;
     }
+
+    .slick-slider {
+        height: 25vh;
+    }
+
+    .slick-list,
+    .slick-track,
+    .slick-slide,
+    .slick-slide div {
+        height: 100%;
+    }
+
+    .slick-slide a {
+        height: 100%;
+    }
+
+    .slick-slide a>img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    nav.fixed>.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    nav.fixed>.container>.flex {
+        width: inherit;
+        gap: unset;
+    }
+
+    nav.fixed>.container>.flex>a>img {
+        width: 3rem;
+    }
+
+    nav.fixed>.container>.flex>div {
+        width: inherit;
+        gap: 0;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    nav.fixed>.container>button {
+        font-size: 10px;
+        width: 15%;
+        /* height: 11%; */
+        padding: 3px;
+    }
+
+    .flex-col {
+        font-size: 10px;
+        flex-direction: column;
+        width: 10%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+
 }
