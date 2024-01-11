@@ -122,6 +122,24 @@ body {
         font-size: 14px;
     }
 
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 5px;
+    background: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, #0088ffd4, #00ffe7);
+    border-radius: 10px;
+  }
+
     .slick-slider {
         height: 25vh;
     }
@@ -180,4 +198,5 @@ body {
 
 
 
-}
+
+
