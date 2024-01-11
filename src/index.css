@@ -57,4 +57,18 @@ body {
     body {
         font-size: 14px;
     }
+    .slick-slider{
+        height:25vh;
+    }
+    .slick-list,.slick-track,.slick-slide,.slick-slide div{
+        height:100%;
+    }
+    .slick-slide a{
+        height: 100%;
+    }
+    .slick-slide a>img{
+        object-fit: cover;
+        height: 100%;
+    }
+
 }
