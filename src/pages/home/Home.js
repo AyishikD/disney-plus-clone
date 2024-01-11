@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <Navbar />
-            <div className="min-h-full w-full bg-home-bg bg-cover bg-fixed bg-center bg-no-repeat px-5">
+            <div className="min-h-full pt-10 w-full bg-home-bg bg-cover bg-fixed bg-center bg-no-repeat px-5">
                 <Header />
                 <Viewers />
                 <Recommended />

@@ -21,50 +21,53 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 w-full overflow-hidden bg-body-bg ">
-            <div className="container mx-auto flex items-center justify-between px-10 py-3">
-                <div className="flex items-center gap-16 ">
-                    <Link to="/">
-                        <img
-                            className="w-28"
-                            src={DisneyLogo}
-                            alt="Logo-Disney"
-                        />
-                    </Link>
-                    <div className="hidden gap-10 xl:flex  ">
+            <div className="container mx-auto flex items-center justify-between sm:px-10 p-1 sm:py-3">
+                <div className="flex items-center justify-evenly flex-wrap sm:gap-16 gap-2">
+                    <>
+                        <Link to="/">
+                            <img
+                                className="w-28"
+                                src={DisneyLogo}
+                                alt="Logo-Disney"
+                            />
+                        </Link>
+                        <button className="transparent rounded border border-white bg-black bg-opacity-60 sm:px-5 sm:py-2 p-1 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black">
+                            Login
+                        </button>
+                    </>
+                    <div className="sm:gap-10 gap-2 flex flex-row flex-wrap ">
                         <NavItem>
                             <HomeIcon width={"36"} />
-                            <p>Home</p>
+                            <p className="hidden lg:block" >Home</p>
                         </NavItem>
 
                         <NavItem>
                             <SearchIcon width={"36"} />
-                            <p>Search</p>
+                            <p className="hidden lg:block" >Search</p>
                         </NavItem>
 
                         <NavItem>
                             <WatchlistIcon width={"36"} />
-                            <p>Watchlist</p>
+                            <p className="hidden lg:block" >Watchlist</p>
                         </NavItem>
 
                         <NavItem>
                             <OriginalsIcon width={"36"} />
-                            <p>Originals</p>
+                            <p className="hidden lg:block" >Originals</p>
                         </NavItem>
 
                         <NavItem>
                             <MoviesIcon width={"36"} />
-                            <p>Movies</p>
+                            <p className="hidden lg:block" >Movies</p>
                         </NavItem>
 
                         <NavItem>
                             <SeriesIcon width={"36"} />
-                            <p>Series</p>
+                            <p className="hidden lg:block" >Series</p>
                         </NavItem>
                     </div>
+
                 </div>
-                <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black">
-                    Login
-                </button>
             </div>
         </nav>
     );
