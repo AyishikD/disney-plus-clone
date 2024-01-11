@@ -13,8 +13,7 @@ const Navbar = () => {
     const NavItem = (props) => {
         return (
             <div className="relative flex cursor-pointer items-center space-x-3 navitem-hover:w-full">
-                {props.children}
-                <span className="absolute right-0 bottom-[-5px] left-[-7px] h-[3px] w-0 rounded-sm bg-white transition-all duration-150 ease-linear"></span>
+                <span className="absolute right-0 bottom-[-5px] left-[-7px] h-[3px] w-0 rounded-sm bg-white transition-all duration-150 ease-linear">{props.children}</span>
             </div>
         );
     };
@@ -38,32 +37,32 @@ const Navbar = () => {
                     <div className="sm:gap-10 gap-2 flex flex-row flex-wrap ">
                         <NavItem>
                             <HomeIcon width={"36"} />
-                            <p className="hidden lg:block" >Home</p>
+                            <p>Home</p>
                         </NavItem>
 
                         <NavItem>
                             <SearchIcon width={"36"} />
-                            <p className="hidden lg:block" >Search</p>
+                            <p>Search</p>
                         </NavItem>
 
                         <NavItem>
                             <WatchlistIcon width={"36"} />
-                            <p className="hidden lg:block" >Watchlist</p>
+                            <p>Watchlist</p>
                         </NavItem>
 
                         <NavItem>
                             <OriginalsIcon width={"36"} />
-                            <p className="hidden lg:block" >Originals</p>
+                            <p>Originals</p>
                         </NavItem>
 
                         <NavItem>
                             <MoviesIcon width={"36"} />
-                            <p className="hidden lg:block" >Movies</p>
+                            <p>Movies</p>
                         </NavItem>
 
                         <NavItem>
                             <SeriesIcon width={"36"} />
-                            <p className="hidden lg:block" >Series</p>
+                            <p>Series</p>
                         </NavItem>
                     </div>
 
