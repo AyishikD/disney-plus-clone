@@ -32,39 +32,39 @@ const Navbar = () => {
                     <div className="gap-14 flex flex-row xl:flex hover:cursor-pointer">
                             <div className="flex flex-col">
                             <HomeIcon width={"36"} />
-                            <p>Home</p>
+                            <p><a href="https://www.hotstar.com/in/home">Home</a></p>
                             </div>           
 
                             
                             <div className="flex flex-col">
                             <SearchIcon width={"36"} />
-                            <p>Search</p>
+                            <p><a href="https://www.hotstar.com/in/explore">Search</a></p>
                             </div>
                            
                                               
 
                             <div className="flex flex-col">
                             <WatchlistIcon width={"36"} />
-                            <p>Watchlist</p>
+                            <p><a href="https://www.hotstar.com/in/migrate_cw?tray_id=p13n-wl&tray_title=Watchlist&tray_type=watchlist">Watchlist</a></p>
                             </div>
                             
 
                             <div className="flex flex-col">
                             <OriginalsIcon width={"36"} />
-                            <p>Originals</p>
+                            <p><a href="https://www.hotstar.com/in/home?ref=%2Fin%2Fchannels%2Fhotstar-originals">Originals</a></p>
                             </div>
                            
 
                             <div className="flex flex-col">
                             <MoviesIcon width={"36"} />
-                            <p>Movies</p>
+                            <p><a href="https://www.hotstar.com/in/movies">Movies</a></p>
                             </div>
                            
                         
 
                             <div className="flex flex-col">
                             <SeriesIcon width={"36"} />
-                            <p>Series</p>
+                            <p><a href="https://www.hotstar.com/in/migrate_cw?tray_id=1260003991&tray_title=Hotstar%2BSpecials&tray_type=category">Series</a></p>
                             </div>
                             
                         
