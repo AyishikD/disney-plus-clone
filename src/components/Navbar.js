@@ -33,32 +33,32 @@ const Navbar = () => {
                     <div className="sm:gap-10 gap-2 flex flex-row justify-evenly order-last ">
                         <NavItem>
                             <HomeIcon width={"36"} />
-                            <a href="https://www.hotstar.com/in/home"><p className="hidden lg:block">Home</p></a>
+                            <a href="#"><p className="hidden lg:block">Home</p></a>
                         </NavItem>
 
                         <NavItem>
                             <SearchIcon width={"36"} />
-                            <a href="https://www.hotstar.com/in/explore"><p className="hidden lg:block">Search</p></a>
+                            <a href="#"><p className="hidden lg:block">Search</p></a>
                         </NavItem>
 
                         <NavItem>
                             <WatchlistIcon width={"36"} />
-                            <a href="https://www.hotstar.com/in/migrate_cw?tray_id=p13n-wl&tray_title=Watchlist&tray_type=watchlist"><p className="hidden lg:block">Watchlist</p></a>
+                            <a href="#"><p className="hidden lg:block">Watchlist</p></a>
                         </NavItem>
 
                         <NavItem>
                             <OriginalsIcon width={"36"} />
-                            <a href="https://www.hotstar.com/in/home?ref=%2Fin%2Fchannels%2Fhotstar-originals"><p className="hidden lg:block">Originals</p></a>
+                            <a href="#"><p className="hidden lg:block">Originals</p></a>
                         </NavItem>
 
                         <NavItem>
                             <MoviesIcon width={"36"} />
-                            <a href="https://www.hotstar.com/in/movies"><p className="hidden lg:block">Movies</p></a>
+                            <a href="#"><p className="hidden lg:block">Movies</p></a>
                         </NavItem>
 
                         <NavItem>
                             <SeriesIcon width={"36"} />
-                            <a href="https://www.hotstar.com/in/browse/category?tray_id=1260003991&tray_title=Hotstar%2BSpecials&tray_type=category"><p className="hidden lg:block">Series</p></a>
+                            <a href="#"><p className="hidden lg:block">Series</p></a>
                         </NavItem>
                     </div>
                     <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black sm:order-last">
