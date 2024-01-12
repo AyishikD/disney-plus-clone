@@ -177,7 +177,38 @@ body {
         align-items: center;
         justify-content: space-around;
     }
-
-
-
 }
+
+
+/* --------------Scroll Bar--------------- */
+/* For Chrome, Edge and Safari */
+::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 5px;
+    background: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    border-radius: 10px;
+  }
+
+/* For Firefox */
+
+* {
+    scroll-behavior: smooth;
+    color: #c1c1c1;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    scrollbar-width: 5px;
+    scrollbar-color: #008aff #0000;
+    background-color: transparent;
+  }
+  
+
+
