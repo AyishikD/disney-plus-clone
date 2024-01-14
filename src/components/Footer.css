@@ -1,0 +1,13 @@
+.myedit-footerlinks{
+    color: rgb(169, 169, 169);
+    transition: all 0.2s ease-in-out;
+}
+
+.myedit-footerlinks:hover{
+    color: white;
+    transform: translateX(10px);
+}
+
+.myedit-footlink-headings{
+    font-size: 20px;
+}

@@ -20,9 +20,9 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-10 w-full overflow-hidden bg-body-bg ">
+        <nav className="fixed top-0 left-0 right-0 z-50 w-full overflow-hidden bg-body-bg ">
             <div className="container mx-auto flex items-center justify-between px-10 py-3">
-                <div className="flex items-center gap-16 ">
+                <div className="flex items-center flex-wrap justify-evenly gap-2">
                     <Link to="/">
                         <img
                             className="w-28"
@@ -30,41 +30,41 @@ const Navbar = () => {
                             alt="Logo-Disney"
                         />
                     </Link>
-                    <div className="hidden gap-10 xl:flex  ">
+                    <div className="sm:gap-10 gap-2 flex flex-row justify-evenly order-last ">
                         <NavItem>
                             <HomeIcon width={"36"} />
-                            <p>Home</p>
+                            <a href="#"><p className="hidden lg:block">Home</p></a>
                         </NavItem>
 
                         <NavItem>
                             <SearchIcon width={"36"} />
-                            <p>Search</p>
+                            <a href="#"><p className="hidden lg:block">Search</p></a>
                         </NavItem>
 
                         <NavItem>
                             <WatchlistIcon width={"36"} />
-                            <p>Watchlist</p>
+                            <a href="#"><p className="hidden lg:block">Watchlist</p></a>
                         </NavItem>
 
                         <NavItem>
                             <OriginalsIcon width={"36"} />
-                            <p>Originals</p>
+                            <a href="#"><p className="hidden lg:block">Originals</p></a>
                         </NavItem>
 
                         <NavItem>
                             <MoviesIcon width={"36"} />
-                            <p>Movies</p>
+                            <a href="#"><p className="hidden lg:block">Movies</p></a>
                         </NavItem>
 
                         <NavItem>
                             <SeriesIcon width={"36"} />
-                            <p>Series</p>
+                            <a href="#"><p className="hidden lg:block">Series</p></a>
                         </NavItem>
                     </div>
+                    <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black sm:order-last">
+                        Login
+                    </button>
                 </div>
-                <button className="transparent rounded border border-white bg-black bg-opacity-60 px-5 py-2 text-lg uppercase tracking-wider text-white transition-colors duration-200 ease-linear hover:bg-white hover:text-black">
-                    Login
-                </button>
             </div>
         </nav>
     );
