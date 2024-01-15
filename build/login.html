@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="login.css" />
+  <link rel="stylesheet" href="aos/aos.css" />
+  <script src="aos/aos.js"></script>
+</head>
+
+<body>
+  <div class="loginbox" >
+    <img data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1000" src="logo.webp">
+    <form onsubmit="login()" id="Loginform" data-aos="zoom-in" data-aos-duration="1000">
+      <small><span id="error" style="color: red"></span></small>
+      <h1>LOGIN HERE</h1>
+      <p>EMAIL ID</p>
+      <input id="email" type="email" name="" placeholder="ENTER YOUR EMAIL" />
+      <p>PASSWORD</p>
+      <input id="password" type="password" name="" placeholder="ENTER YOUR PASSWORD" />
+      <input type="submit" name="" value="LOGIN" />
+      <input type="submit" name="" value="SIGNUP">
+      <a href="">Forgot Password ?</a>
+      <a href="#">Don't have an Account?</a>
+    </form>
+  </div>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+   <script src="firebase.js"></script>
+<script src="login.js"></script>
+
+</body>
+
+<script>
+  AOS.init();
+</script>
+
+</html>
