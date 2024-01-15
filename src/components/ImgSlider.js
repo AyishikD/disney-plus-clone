@@ -1,104 +1,89 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slide1 from "../assets/images/slider-badging.jpg";
 import Slide2 from "../assets/images/slider-scale.jpg";
 import Slide3 from "../assets/images/slider-badag.jpg";
 import Slide4 from "../assets/images/slider-scales.jpg";
-import Slider from "react-slick";
-import styled from "styled-components";
+import { motion } from "framer-motion";
+import { CiPlay1 } from "react-icons/ci";
 
 const ImgSlider = () => {
-    let setting = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slideToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-    };
-    const Carousel = styled(Slider)`
-        margin-top: 20px;
-        & > button {
-            opacity: 0;
-            height: 100%;
-            width: 5vw;
-            z-index: 1;
-            &:hover {
-                opacity: 1;
-                transition: opacity 0.2s ease 0s;
-            }
-        }
-        ul li button {
-            &:before {
-                font-size: 10px;
-                color: rgb(150, 158, 171);
-            }
-        }
-        li.slick-active button:before {
-            color: white;
-        }
-        .slick-list {
-            overflow: initial;
-        }
-        .slick-prev {
-            left: -45px;
-        }
-        .slick-next {
-            right: -45px;
-        }
-    `;
-    const Wrap = styled.div`
-        border-radius: 4px;
-        cursor: pointer;
-        position: relative;
-        a {
-            border-radius: 4px;
-            box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
-                rgb(0 0 0 / 73%) 0px 16px 10px -10px;
-            cursor: pointer;
-            display: block;
-            position: relative;
-            padding: 4px;
-            img {
-                width: 100%;
-                height: 100%;
-            }
-            &:hover {
-                padding: 0;
-                border: 4px solid rgba(249, 249, 249, 0.8);
-                transition-duration: 300ms;
-            }
-        }
-    `;
-    return (
-        <Carousel {...setting}>
-            <Wrap>
-                <a>
-                    <img src={Slide1} alt="" />
-                </a>
-            </Wrap>
+  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3]);
 
-            <Wrap>
-                <a>
-                    <img src={Slide2} alt="" />
-                </a>
-            </Wrap>
+  const handleNext = () => {
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex + 1) % 4
+      );
+      return updatedIndexes;
+    });
+  };
 
-            <Wrap>
-                <a>
-                    <img src={Slide3} alt="" />
-                </a>
-            </Wrap>
+  const handleBack = () => {
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex + 3) % 4
+      );
+      return updatedIndexes;
+    });
+  };
 
-            <Wrap>
-                <a>
-                    <img src={Slide4} alt="" />
-                </a>
-            </Wrap>
-        </Carousel>
-    );
+  const images = [Slide1, Slide2, Slide3, Slide4];
+
+  const positions = ["center", "left1", "left", "right", "right1"];
+
+  const imageVariants = {
+    center: { x: "0%", scale: 2, zIndex: 5 }, // Zoomed scale for the center image
+    left1: { x: "-50%", scale: 0.7, zIndex: 3 },
+    left: { x: "-90%", scale: 0.5, zIndex: 2 },
+    right: { x: "90%", scale: 0.5, zIndex: 1 },
+    right1: { x: "50%", scale: 0.7, zIndex: 3 },
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      handleNext();
+    }, 3500);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <header className="h-customHeight bg-black">
+      <div className="relative h-full flex items-center justify-center">
+        {images.map((image, index) => (
+          <motion.img
+            key={index}
+            src={image}
+            alt={image}
+            className="rounded-[12px]"
+            initial="center"
+            animate={positions[positionIndexes[index]]}
+            variants={imageVariants}
+            transition={{ duration: 1}}
+            style={{ width: "40%", position: "absolute" }}
+          />
+        ))}
+      </div>
+      <div className="absolute top-1/3 transform -translate-y-1/2 left-1">
+        <button
+          className="text-white bg-blue-400 rounded-md p-2 rotate-180"
+          onClick={handleBack}
+        >
+          <CiPlay1 />
+        </button>
+      </div>
+      <div className="absolute top-1/3 transform -translate-y-1/2 right-1">
+        <button
+          className="text-white bg-blue-400 rounded-md p-2"
+          onClick={handleNext}
+        >
+          <CiPlay1 />
+        </button>
+      </div>
+    </header>
+  );
 };
 
 export default ImgSlider;
-
