@@ -21,6 +21,9 @@ module.exports = {
                 "viewer-hover":
                     "0 40px 58px -16px rgba(0, 0, 0, 0.8), 0 30px 22px -10px rgba(0, 0, 0,  0.72 )",
             },
+            height: {
+                "customHeight" : "50vh" ,
+            },
         },
     },
     plugins: [
